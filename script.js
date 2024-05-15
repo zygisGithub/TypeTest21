@@ -175,6 +175,5 @@ function isOppositeDirection(dir1, dir2) {
         (dir1 === 'ArrowRight' && dir2 === 'ArrowLeft');
 }
 
-
-
+console.log('hellow world')
 
