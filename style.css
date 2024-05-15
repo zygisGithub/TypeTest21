@@ -1,0 +1,122 @@
+body {
+    display: flex;justify-content: center;align-items: center;flex-direction: column;
+    font-family: Arial;
+    color: #525252;
+}
+
+#gridBox {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 600px;
+    height: 600px;
+    user-select: none;
+    border: 5px solid black;
+    background-color: #6f9653;
+}
+
+#snake {
+    background-color: brown;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: relative;
+    transition: rotate 0.3s ease;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 10px;
+        background-color: black;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 5px solid white;
+        border-top: 2px solid white;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 10px;
+        background-color: black;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 5px solid white;
+        border-top: 2px solid white;
+    }
+}
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.food {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-image: url("apple.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        scale: 0.9;
+    }
+}
+.poison {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-image: url("poison.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        scale: 0.9;
+    }
+}
+
+.tail {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: yellowgreen;
+        border: 2px solid green;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+    }
+}
+.borderOne {
+    border: 30px solid greenyellow;
+}
+.borderTwo {
+    border: 30px solid green;
+}
+.snakeUp {
+    transform: rotate(0deg)
+}
+.snakeDown {
+    transform: rotate(180deg)
+}
+.snakeLeft {
+    transform: rotate(-90deg)
+}
+.snakeRight {
+    transform: rotate(90deg)
+}
+
